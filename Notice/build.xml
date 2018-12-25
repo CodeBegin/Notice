@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="Notice">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../Documents/Programming/Programs/Eclipse.app/Contents/Eclipse/"/>
+    <property name="junit.output.dir" value="junit"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="9"/>
+    <property name="source" value="9"/>
+    <path id="Notice.classpath">
+        <pathelement location="target/classes"/>
+        <pathelement location="../../Documents/Programming/Programming/Library/log4j-1.2.9.jar"/>
+        <pathelement location="../../Documents/Programming/Programming/Java/library/gson-2.8.2.jar"/>
+    </path>
+    <path id="run.ApnsServiceBuilderTest.classpath">
+        <path refid="Notice.classpath"/>
+        <pathelement location="../../Documents/Programming/Programming/Library/log4j-1.2.9.jar"/>
+        <pathelement location="../../Documents/Programming/Programming/Java/library/gson-2.8.2.jar"/>
+    </path>
+    <path id="run.Notice (4).classpath">
+        <path refid="Notice.classpath"/>
+        <pathelement location="../../Documents/Programming/Programming/Library/log4j-1.2.9.jar"/>
+        <pathelement location="../../Documents/Programming/Programming/Java/library/gson-2.8.2.jar"/>
+    </path>
+    <path id="run.Demo.classpath">
+        <path refid="Notice.classpath"/>
+        <pathelement location="../../Documents/Programming/Programming/Library/log4j-1.2.9.jar"/>
+        <pathelement location="../../Documents/Programming/Programming/Java/library/gson-2.8.2.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="target/classes"/>
+        <copy includeemptydirs="false" todir="target/classes">
+            <fileset dir="src">
+                <include name="**/*.java"/>
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="target/classes"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="target/classes" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <include name="**/*.java"/>
+            <classpath refid="Notice.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="ApnsServiceBuilderTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="com.jdev.apns.test.ApnsServiceBuilderTest" todir="${junit.output.dir}"/>
+            <jvmarg line="--add-opens m/p1=ALL-UNNAMED"/>
+            <classpath refid="run.ApnsServiceBuilderTest.classpath"/>
+        </junit>
+    </target>
+    <target name="Notice (4)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.Notice (4).classpath"/>
+        </junit>
+    </target>
+    <target name="Demo">
+        <java classname="com.jdev.apns.test.Demo" failonerror="true" fork="yes">
+            <classpath refid="run.Demo.classpath"/>
+        </java>
+    </target>
+    <target name="junitreport">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
+    </target>
+</project>

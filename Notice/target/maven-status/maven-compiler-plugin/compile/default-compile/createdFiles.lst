@@ -1,0 +1,16 @@
+com/jdev/apns/main/util/CertificateReader.class
+com/jdev/apns/main/model/Alert.class
+com/jdev/apns/main/model/FailureResponse.class
+com/jdev/apns/main/impl/SSLContextBuilder.class
+com/jdev/apns/main/Notification.class
+com/jdev/apns/main/util/JWT.class
+com/jdev/apns/main/Constants.class
+com/jdev/apns/main/model/Headers.class
+com/jdev/apns/main/ApnsService.class
+module-info.class
+com/jdev/apns/main/util/PayloadBuilder.class
+com/jdev/apns/main/impl/ApnsServiceBuilder.class
+com/jdev/apns/main/model/RejectionReason.class
+com/jdev/apns/test/Demo.class
+com/jdev/apns/main/model/APS.class
+com/jdev/apns/main/model/NotificationResponse.class
