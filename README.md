@@ -98,3 +98,8 @@ Sending push notification using default settings
 	.setTopic("com.example.yourApp");
     service.sendNotification(notification);
 ```
+
+## License and status
+Notice is available under the MIT License.
+
+I  am currently using it in production. If you have any questions, please let me know.
