@@ -9,6 +9,7 @@ Notice adheres to Apple's HTTP/2-based APNs protocol and supports both TLS and t
 You can download Notice as a .jar file and add it you your project directly. Make sure you have Notice's runtime dependencies on your classpath. They are:
   - [GSON 2.8.2](https://repo1.maven.org/maven2/com/google/code/gson/gson/2.8.2/)
   - [log4j 1.2.9](https://archive.apache.org/dist/logging/log4j/1.2.9/)
+
 Notice requires Java 11 to build and run since it does not depend on netty, jetty, etc.
 
 ## Usage
