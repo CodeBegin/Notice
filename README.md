@@ -81,20 +81,20 @@ You can even customize the executor for your own taste using createCustomExecuto
   
   /* Below is advanced setting */
   // @param coreSize: number of threads to start with
-	// @param maxSize: maximum number of threads
-	// @param aliveTime: idle time
+  // @param maxSize: maximum number of threads
+  // @param aliveTime: idle time
   // createCustomExecutors(
-			int coreSize, int maxSize, long aliveTime, TimeUnit unit)
+	int coreSize, int maxSize, long aliveTime, TimeUnit unit)
 ```
 
 #### Sending push notifications
 Sending push notification using default settings
 ```
     String deviceToken = "SOME DEVICE TOKEN"; // This can be acquired from appDelegate on Xcode
-	  Notification notification = new Notification(payload.build())
-				.setUuid()
-				.setExpiration(10)
-				.setToken(deviceToken)
-				.setTopic("com.example.yourApp");
-		service.sendNotification(notification);
+    Notification notification = new Notification(payload.build())
+	.setUuid()
+	.setExpiration(10)
+	.setToken(deviceToken)
+	.setTopic("com.example.yourApp");
+    service.sendNotification(notification);
 ```
